@@ -1,0 +1,26 @@
+[
+    {
+        "Id": 7,
+        "MarqueeText": "Jagalah kebersihan Mushalla demi kenyamanan ibadah",
+        "CreatedBy": null,
+        "ModifiedBy": null,
+        "createdAt": "2023-10-27 13:50:28.992 +00:00",
+        "updatedAt": "2023-10-27 15:03:10.727 +00:00"
+    },
+    {
+        "Id": 8,
+        "MarqueeText": "Manfaatkan waktu antara adzan dan iqomah untuk berdoa",
+        "CreatedBy": null,
+        "ModifiedBy": null,
+        "createdAt": "2023-10-27 13:50:36.816 +00:00",
+        "updatedAt": "2023-10-27 15:04:01.134 +00:00"
+    },
+    {
+        "Id": 9,
+        "MarqueeText": "Selalu tutup pintu setiap keluar dan masuk mushalla ",
+        "CreatedBy": null,
+        "ModifiedBy": null,
+        "createdAt": "2023-10-27 15:06:30.838 +00:00",
+        "updatedAt": "2023-10-27 15:06:30.838 +00:00"
+    }
+]
