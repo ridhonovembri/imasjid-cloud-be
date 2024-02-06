@@ -4,7 +4,7 @@ const postgre = require("../db");
 exports.findAll = async () => {
   try {
     const { rows } = await postgre.query(
-      "SELECT Id as id, hadist_content as HadistContent, hadist_from as HadistFrom FROM masjid_hadist"
+      'SELECT Id as id, hadist_content as "HadistContent", hadist_from as "HadistFrom" FROM masjid_hadist ORDER BY id'
     );
     // console.log("rows", rows);
     return rows;
@@ -16,7 +16,7 @@ exports.findAll = async () => {
 exports.findOne = async () => {
   try {
     const { rows } = await postgre.query(
-      "SELECT Id as id, hadist_content as HadistContent, hadist_from as HadistFrom FROM masjid_hadist ORDER BY id LIMIT 1 "
+      'SELECT Id as id, hadist_content as "HadistContent", hadist_from as "HadistFrom" FROM masjid_hadist LIMIT 1 '
     );
     // console.log("rows", rows)
     return rows[0];
@@ -28,7 +28,7 @@ exports.findOne = async () => {
 exports.findRandom = async () => {
   try {
     const { rows } = await postgre.query(
-      "SELECT Id as id, hadist_content as HadistContent, hadist_from as HadistFrom FROM masjid_hadist ORDER BY RANDOM() LIMIT 1 "
+      'SELECT Id as id, hadist_content as "HadistContent", hadist_from as "HadistFrom" FROM masjid_hadist ORDER BY RANDOM() LIMIT 1 '
     );
     // console.log("rows", rows)
     return rows[0];
@@ -40,7 +40,7 @@ exports.findRandom = async () => {
 exports.findByPk = async (id) => {
   try {
     const sql =
-      "SELECT Id as id, hadist_content as HadistContent, hadist_from as HadistFrom FROM masjid_hadist where id = $1";
+    'SELECT Id as id, hadist_content as "HadistContent", hadist_from as "HadistFrom" FROM masjid_hadist where id = $1';
 
     const { rows } = await postgre.query(sql, [id]);
     // console.log("rows", rows)

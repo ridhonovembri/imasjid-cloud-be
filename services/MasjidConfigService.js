@@ -3,16 +3,16 @@ const postgre = require("../db");
 
 exports.findAll = async () => {
   try {
-    const { rows } = await postgre.query("SELECT Id as id, " +
-    "MINUTES_TO_ADZAN_SHUBUH as MinutesToAdzanShubuh, MINUTES_TO_ADZAN_DZUHUR as MinutesToAdzanDzuhur, MINUTES_TO_ADZAN_ASHAR as MinutesToAdzanAshar, MINUTES_TO_ADZAN_MAGHRIB as MinutesToAdzanMaghrib, MINUTES_TO_ADZAN_ISYA as MinutesToAdzanIsya, " +
-    "MINUTES_TO_IQOMAH_SHUBUH as MinutesToIqomahShubuh, MINUTES_TO_IQOMAH_DZUHUR as MinutesToIqomahDzuhur, MINUTES_TO_IQOMAH_ASHAR as MinutesToIqomahAshar, " +
-    "MINUTES_TO_IQOMAH_MAGHRIB as MinutesToIqomahMaghrib, MINUTES_TO_IQOMAH_ISYA as MinutesToIqomahIsya, MINUTES_TO_ADZAN_PREP as MinutesToAdzanPrep, LABEL_SHUBUH as LabelShubuh, LABEL_SYURUQ as LabelSyuruq, LABEL_DZUHUR as LabelDzuhur, " +
-    "LABEL_ASHAR as LabelAshar, LABEL_MAGHRIB as LabelMaghrib, LABEL_ISYA as LabelIsya, ADJUST_SHUBUH as AdjustShubuh, ADJUST_SYURUQ as AdjustSyuruq, ADJUST_DZUHUR as AdjustDzuhur, " +
-    "ADJUST_ASHAR as AdjustAshar, ADJUST_MAGHRIB as AdjustMaghrib, ADJUST_ISYA as AdjustIsya, TEXT_BEFORE_ADZAN as TextBeforeAdzan, TEXT_BEFORE_IQOMAH as TextBeforeIqomah, TEXT_DURING_SHOLAT1 as TextDuringSholat1, TEXT_DURING_SHOLAT2 as TextDuringSholat2, " +
-    "LATITUDE as Latitude, LONGITUDE as Longitude, BG_IMG_SHOLAT as BgImgSholat, ICON_DURING_SHOLAT as IconDuringSholat, INTERVAL_SLIDE as IntevalSlide, " +
-    "INTERVAL_HADIST as IntervalHadist, SHOLAT_DURATION as SholatDuration, SOUND_LOCATION as SoundLocation, FONTSIZE_MASJIDNAME as FontSizeMasjidname, FONTSIZE_MASJIDADDRESS as FontSizeMasjidAdddress, " +
-    "FONTSIZE_DATE as FontSizeDate, FONTSIZE_CLOCK_HOUR_MINUTE as FontSizeClockHourMinute, FONTSIZE_CLOCK_SECOND as FontSizeClockSecond, FONTSIZE_HADIST as FontSizeHadist, FONTSIZE_MARQUEE as FontSizeMarquee, FONTSIZE_PRAYERLABEL as FontSizePrayerlabel, FONTSIZE_PRAYERTIME as FontSizePrayertime " +
-    "FROM masjid_config ORDER BY id");
+    const { rows } = await postgre.query('SELECT Id as id, ' +
+    'MINUTES_TO_ADZAN_SHUBUH as "MinutesToAdzanShubuh", MINUTES_TO_ADZAN_DZUHUR as "MinutesToAdzanDzuhur", MINUTES_TO_ADZAN_ASHAR as "MinutesToAdzanAshar", MINUTES_TO_ADZAN_MAGHRIB as "MinutesToAdzanMaghrib", MINUTES_TO_ADZAN_ISYA as "MinutesToAdzanIsya", ' +
+    'MINUTES_TO_IQOMAH_SHUBUH as "MinutesToIqomahShubuh", MINUTES_TO_IQOMAH_DZUHUR as "MinutesToIqomahDzuhur", MINUTES_TO_IQOMAH_ASHAR as "MinutesToIqomahAshar", ' +
+    'MINUTES_TO_IQOMAH_MAGHRIB as "MinutesToIqomahMaghrib", MINUTES_TO_IQOMAH_ISYA as "MinutesToIqomahIsya", MINUTES_TO_ADZAN_PREP as "MinutesToAdzanPrep", LABEL_SHUBUH as "LabelShubuh", LABEL_SYURUQ as "LabelSyuruq", LABEL_DZUHUR as "LabelDzuhur", ' +
+    'LABEL_ASHAR as "LabelAshar", LABEL_MAGHRIB as "LabelMaghrib", LABEL_ISYA as "LabelIsya", ADJUST_SHUBUH as "AdjustShubuh", ADJUST_SYURUQ as "AdjustSyuruq", ADJUST_DZUHUR as "AdjustDzuhur", ' +
+    'ADJUST_ASHAR as "AdjustAshar", ADJUST_MAGHRIB as "AdjustMaghrib", ADJUST_ISYA as "AdjustIsya", TEXT_BEFORE_ADZAN as "TextBeforeAdzan", TEXT_BEFORE_IQOMAH as "TextBeforeIqomah", TEXT_DURING_SHOLAT1 as "TextDuringSholat1", TEXT_DURING_SHOLAT2 as "TextDuringSholat2", ' +
+    'LATITUDE as "Latitude", LONGITUDE as "Longitude", BG_IMG_SHOLAT as "BgImgSholat", ICON_DURING_SHOLAT as "IconDuringSholat", INTERVAL_SLIDE as "IntervalSlide", ' +
+    'INTERVAL_HADIST as "IntervalHadist", SHOLAT_DURATION as "SholatDuration", SOUND_LOCATION as "SoundLocation", FONTSIZE_MASJIDNAME as "FontSizeMasjidname", FONTSIZE_MASJIDADDRESS as "FontSizeMasjidaddress", ' +
+    'FONTSIZE_DATE as "FontSizeDate", FONTSIZE_CLOCK_HOUR_MINUTE as "FontSizeClockHourMinute", FONTSIZE_CLOCK_SECOND as "FontSizeClockSecond", FONTSIZE_HADIST as "FontSizeHadist", FONTSIZE_MARQUEE as "FontSizeMarquee", FONTSIZE_PRAYERLABEL as "FontSizePrayerlabel", FONTSIZE_PRAYERTIME as "FontSizePrayertime" ' +
+    'FROM masjid_config ORDER BY id');
     // console.log("rows", rows);
     return rows;
   } catch (e) {
@@ -23,16 +23,16 @@ exports.findAll = async () => {
 exports.findOne = async () => {
   try {
     const { rows } = await postgre.query(
-      "SELECT Id as id, " +
-      "MINUTES_TO_ADZAN_SHUBUH as MinutesToAdzanShubuh, MINUTES_TO_ADZAN_DZUHUR as MinutesToAdzanDzuhur, MINUTES_TO_ADZAN_ASHAR as MinutesToAdzanAshar, MINUTES_TO_ADZAN_MAGHRIB as MinutesToAdzanMaghrib, MINUTES_TO_ADZAN_ISYA as MinutesToAdzanIsya, " +
-      "MINUTES_TO_IQOMAH_SHUBUH as MinutesToIqomahShubuh, MINUTES_TO_IQOMAH_DZUHUR as MinutesToIqomahDzuhur, MINUTES_TO_IQOMAH_ASHAR as MinutesToIqomahAshar, " +
-      "MINUTES_TO_IQOMAH_MAGHRIB as MinutesToIqomahMaghrib, MINUTES_TO_IQOMAH_ISYA as MinutesToIqomahIsya, MINUTES_TO_ADZAN_PREP as MinutesToAdzanPrep, LABEL_SHUBUH as LabelShubuh, LABEL_SYURUQ as LabelSyuruq, LABEL_DZUHUR as LabelDzuhur, " +
-      "LABEL_ASHAR as LabelAshar, LABEL_MAGHRIB as LabelMaghrib, LABEL_ISYA as LabelIsya, ADJUST_SHUBUH as AdjustShubuh, ADJUST_SYURUQ as AdjustSyuruq, ADJUST_DZUHUR as AdjustDzuhur, " +
-      "ADJUST_ASHAR as AdjustAshar, ADJUST_MAGHRIB as AdjustMaghrib, ADJUST_ISYA as AdjustIsya, TEXT_BEFORE_ADZAN as TextBeforeAdzan, TEXT_BEFORE_IQOMAH as TextBeforeIqomah, TEXT_DURING_SHOLAT1 as TextDuringSholat1, TEXT_DURING_SHOLAT2 as TextDuringSholat2, " +
-      "LATITUDE as Latitude, LONGITUDE as Longitude, BG_IMG_SHOLAT as BgImgSholat, ICON_DURING_SHOLAT as IconDuringSholat, INTERVAL_SLIDE as IntevalSlide, " +
-      "INTERVAL_HADIST as IntervalHadist, SHOLAT_DURATION as SholatDuration, SOUND_LOCATION as SoundLocation, FONTSIZE_MASJIDNAME as FontSizeMasjidname, FONTSIZE_MASJIDADDRESS as FontSizeMasjidAdddress, " +
-      "FONTSIZE_DATE as FontSizeDate, FONTSIZE_CLOCK_HOUR_MINUTE as FontSizeClockHourMinute, FONTSIZE_CLOCK_SECOND as FontSizeClockSecond, FONTSIZE_HADIST as FontSizeHadist, FONTSIZE_MARQUEE as FontSizeMarquee, FONTSIZE_PRAYERLABEL as FontSizePrayerlabel, FONTSIZE_PRAYERTIME as FontSizePrayertime " +
-      "FROM masjid_config ORDER BY id "
+    'SELECT Id as id, ' +
+    'MINUTES_TO_ADZAN_SHUBUH as "MinutesToAdzanShubuh", MINUTES_TO_ADZAN_DZUHUR as "MinutesToAdzanDzuhur", MINUTES_TO_ADZAN_ASHAR as "MinutesToAdzanAshar", MINUTES_TO_ADZAN_MAGHRIB as "MinutesToAdzanMaghrib", MINUTES_TO_ADZAN_ISYA as "MinutesToAdzanIsya", ' +
+    'MINUTES_TO_IQOMAH_SHUBUH as "MinutesToIqomahShubuh", MINUTES_TO_IQOMAH_DZUHUR as "MinutesToIqomahDzuhur", MINUTES_TO_IQOMAH_ASHAR as "MinutesToIqomahAshar", ' +
+    'MINUTES_TO_IQOMAH_MAGHRIB as "MinutesToIqomahMaghrib", MINUTES_TO_IQOMAH_ISYA as "MinutesToIqomahIsya", MINUTES_TO_ADZAN_PREP as "MinutesToAdzanPrep", LABEL_SHUBUH as "LabelShubuh", LABEL_SYURUQ as "LabelSyuruq", LABEL_DZUHUR as "LabelDzuhur", ' +
+    'LABEL_ASHAR as "LabelAshar", LABEL_MAGHRIB as "LabelMaghrib", LABEL_ISYA as "LabelIsya", ADJUST_SHUBUH as "AdjustShubuh", ADJUST_SYURUQ as "AdjustSyuruq", ADJUST_DZUHUR as "AdjustDzuhur", ' +
+    'ADJUST_ASHAR as "AdjustAshar", ADJUST_MAGHRIB as "AdjustMaghrib", ADJUST_ISYA as "AdjustIsya", TEXT_BEFORE_ADZAN as "TextBeforeAdzan", TEXT_BEFORE_IQOMAH as "TextBeforeIqomah", TEXT_DURING_SHOLAT1 as "TextDuringSholat1", TEXT_DURING_SHOLAT2 as "TextDuringSholat2", ' +
+    'LATITUDE as "Latitude", LONGITUDE as "Longitude", BG_IMG_SHOLAT as "BgImgSholat", ICON_DURING_SHOLAT as "IconDuringSholat", INTERVAL_SLIDE as "IntervalSlide", ' +
+    'INTERVAL_HADIST as "IntervalHadist", SHOLAT_DURATION as "SholatDuration", SOUND_LOCATION as "SoundLocation", FONTSIZE_MASJIDNAME as "FontSizeMasjidname", FONTSIZE_MASJIDADDRESS as "FontSizeMasjidaddress", ' +
+    'FONTSIZE_DATE as "FontSizeDate", FONTSIZE_CLOCK_HOUR_MINUTE as "FontSizeClockHourMinute", FONTSIZE_CLOCK_SECOND as "FontSizeClockSecond", FONTSIZE_HADIST as "FontSizeHadist", FONTSIZE_MARQUEE as "FontSizeMarquee", FONTSIZE_PRAYERLABEL as "FontSizePrayerlabel", FONTSIZE_PRAYERTIME as "FontSizePrayertime" ' +
+    'FROM masjid_config ORDER BY id LIMIT 1'
     );
     // console.log("rows", rows[0]);
     return rows[0];
@@ -44,16 +44,16 @@ exports.findOne = async () => {
 
 exports.findByPk = async (id) => {
   try {
-    const sql = "SELECT Id as id, " +
-    "MINUTES_TO_ADZAN_SHUBUH as MinutesToAdzanShubuh, MINUTES_TO_ADZAN_DZUHUR as MinutesToAdzanDzuhur, MINUTES_TO_ADZAN_ASHAR as MinutesToAdzanAshar, MINUTES_TO_ADZAN_MAGHRIB as MinutesToAdzanMaghrib, MINUTES_TO_ADZAN_ISYA as MinutesToAdzanIsya, " +
-    "MINUTES_TO_IQOMAH_SHUBUH as MinutesToIqomahShubuh, MINUTES_TO_IQOMAH_DZUHUR as MinutesToIqomahDzuhur, MINUTES_TO_IQOMAH_ASHAR as MinutesToIqomahAshar, " +
-    "MINUTES_TO_IQOMAH_MAGHRIB as MinutesToIqomahMaghrib, MINUTES_TO_IQOMAH_ISYA as MinutesToIqomahIsya, MINUTES_TO_ADZAN_PREP as MinutesToAdzanPrep, LABEL_SHUBUH as LabelShubuh, LABEL_SYURUQ as LabelSyuruq, LABEL_DZUHUR as LabelDzuhur, " +
-    "LABEL_ASHAR as LabelAshar, LABEL_MAGHRIB as LabelMaghrib, LABEL_ISYA as LabelIsya, ADJUST_SHUBUH as AdjustShubuh, ADJUST_SYURUQ as AdjustSyuruq, ADJUST_DZUHUR as AdjustDzuhur, " +
-    "ADJUST_ASHAR as AdjustAshar, ADJUST_MAGHRIB as AdjustMaghrib, ADJUST_ISYA as AdjustIsya, TEXT_BEFORE_ADZAN as TextBeforeAdzan, TEXT_BEFORE_IQOMAH as TextBeforeIqomah, TEXT_DURING_SHOLAT1 as TextDuringSholat1, TEXT_DURING_SHOLAT2 as TextDuringSholat2, " +
-    "LATITUDE as Latitude, LONGITUDE as Longitude, BG_IMG_SHOLAT as BgImgSholat, ICON_DURING_SHOLAT as IconDuringSholat, INTERVAL_SLIDE as IntevalSlide, " +
-    "INTERVAL_HADIST as IntervalHadist, SHOLAT_DURATION as SholatDuration, SOUND_LOCATION as SoundLocation, FONTSIZE_MASJIDNAME as FontSizeMasjidname, FONTSIZE_MASJIDADDRESS as FontSizeMasjidAdddress, " +
-    "FONTSIZE_DATE as FontSizeDate, FONTSIZE_CLOCK_HOUR_MINUTE as FontSizeClockHourMinute, FONTSIZE_CLOCK_SECOND as FontSizeClockSecond, FONTSIZE_HADIST as FontSizeHadist, FONTSIZE_MARQUEE as FontSizeMarquee, FONTSIZE_PRAYERLABEL as FontSizePrayerlabel, FONTSIZE_PRAYERTIME as FontSizePrayertime " +
-    "FROM masjid_config where id = $1";
+    const sql = 'SELECT Id as id, ' +
+    'MINUTES_TO_ADZAN_SHUBUH as "MinutesToAdzanShubuh", MINUTES_TO_ADZAN_DZUHUR as "MinutesToAdzanDzuhur", MINUTES_TO_ADZAN_ASHAR as "MinutesToAdzanAshar", MINUTES_TO_ADZAN_MAGHRIB as "MinutesToAdzanMaghrib", MINUTES_TO_ADZAN_ISYA as "MinutesToAdzanIsya", ' +
+    'MINUTES_TO_IQOMAH_SHUBUH as "MinutesToIqomahShubuh", MINUTES_TO_IQOMAH_DZUHUR as "MinutesToIqomahDzuhur", MINUTES_TO_IQOMAH_ASHAR as "MinutesToIqomahAshar", ' +
+    'MINUTES_TO_IQOMAH_MAGHRIB as "MinutesToIqomahMaghrib", MINUTES_TO_IQOMAH_ISYA as "MinutesToIqomahIsya", MINUTES_TO_ADZAN_PREP as "MinutesToAdzanPrep", LABEL_SHUBUH as "LabelShubuh", LABEL_SYURUQ as "LabelSyuruq", LABEL_DZUHUR as "LabelDzuhur", ' +
+    'LABEL_ASHAR as "LabelAshar", LABEL_MAGHRIB as "LabelMaghrib", LABEL_ISYA as "LabelIsya", ADJUST_SHUBUH as "AdjustShubuh", ADJUST_SYURUQ as "AdjustSyuruq", ADJUST_DZUHUR as "AdjustDzuhur", ' +
+    'ADJUST_ASHAR as "AdjustAshar", ADJUST_MAGHRIB as "AdjustMaghrib", ADJUST_ISYA as "AdjustIsya", TEXT_BEFORE_ADZAN as "TextBeforeAdzan", TEXT_BEFORE_IQOMAH as "TextBeforeIqomah", TEXT_DURING_SHOLAT1 as "TextDuringSholat1", TEXT_DURING_SHOLAT2 as "TextDuringSholat2", ' +
+    'LATITUDE as "Latitude", LONGITUDE as "Longitude", BG_IMG_SHOLAT as "BgImgSholat", ICON_DURING_SHOLAT as "IconDuringSholat", INTERVAL_SLIDE as "IntervalSlide", ' +
+    'INTERVAL_HADIST as "IntervalHadist", SHOLAT_DURATION as "SholatDuration", SOUND_LOCATION as "SoundLocation", FONTSIZE_MASJIDNAME as "FontSizeMasjidname", FONTSIZE_MASJIDADDRESS as "FontSizeMasjidaddress", ' +
+    'FONTSIZE_DATE as "FontSizeDate", FONTSIZE_CLOCK_HOUR_MINUTE as "FontSizeClockHourMinute", FONTSIZE_CLOCK_SECOND as "FontSizeClockSecond", FONTSIZE_HADIST as "FontSizeHadist", FONTSIZE_MARQUEE as "FontSizeMarquee", FONTSIZE_PRAYERLABEL as "FontSizePrayerlabel", FONTSIZE_PRAYERTIME as "FontSizePrayertime" ' +
+    'FROM masjid_config where id = $1 ORDER BY id';
 
     const { rows } = await postgre.query(sql, [id]);
     // console.log("rows", rows)
