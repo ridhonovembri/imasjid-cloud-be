@@ -31,7 +31,7 @@ exports.findRandom = async () => {
       'SELECT Id as id, hadist_content as "HadistContent", hadist_from as "HadistFrom" FROM masjid_hadist ORDER BY RANDOM() LIMIT 1 '
     );
     // console.log("rows", rows)
-    return rows[0];
+    return rows;
   } catch (e) {
     throw e;
   }
