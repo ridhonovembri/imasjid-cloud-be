@@ -14,7 +14,7 @@ app.use(cors(corsOptions));
 app.use(appRoutes)
 
 app.get('/', (req, res) => {
-    res.status(200).send('Hai Vercel... I am Express...now from CLI.. new git!')
+    res.status(200).send('Hi Vercel...!')
 })
 
 const PORT = 3000

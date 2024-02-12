@@ -3,7 +3,7 @@ const postgre = require("../db");
 
 exports.findAll = async () => {
   try {
-    const { rows } = await postgre.query('SELECT Id as id, ' +
+    const { rows } = await postgre.query('SELECT Id as "Id", ' +
     'MINUTES_TO_ADZAN_SHUBUH as "MinutesToAdzanShubuh", MINUTES_TO_ADZAN_DZUHUR as "MinutesToAdzanDzuhur", MINUTES_TO_ADZAN_ASHAR as "MinutesToAdzanAshar", MINUTES_TO_ADZAN_MAGHRIB as "MinutesToAdzanMaghrib", MINUTES_TO_ADZAN_ISYA as "MinutesToAdzanIsya", ' +
     'MINUTES_TO_IQOMAH_SHUBUH as "MinutesToIqomahShubuh", MINUTES_TO_IQOMAH_DZUHUR as "MinutesToIqomahDzuhur", MINUTES_TO_IQOMAH_ASHAR as "MinutesToIqomahAshar", ' +
     'MINUTES_TO_IQOMAH_MAGHRIB as "MinutesToIqomahMaghrib", MINUTES_TO_IQOMAH_ISYA as "MinutesToIqomahIsya", MINUTES_TO_ADZAN_PREP as "MinutesToAdzanPrep", LABEL_SHUBUH as "LabelShubuh", LABEL_SYURUQ as "LabelSyuruq", LABEL_DZUHUR as "LabelDzuhur", ' +
@@ -23,7 +23,7 @@ exports.findAll = async () => {
 exports.findOne = async () => {
   try {
     const { rows } = await postgre.query(
-    'SELECT Id as id, ' +
+    'SELECT Id as "Id", ' +
     'MINUTES_TO_ADZAN_SHUBUH as "MinutesToAdzanShubuh", MINUTES_TO_ADZAN_DZUHUR as "MinutesToAdzanDzuhur", MINUTES_TO_ADZAN_ASHAR as "MinutesToAdzanAshar", MINUTES_TO_ADZAN_MAGHRIB as "MinutesToAdzanMaghrib", MINUTES_TO_ADZAN_ISYA as "MinutesToAdzanIsya", ' +
     'MINUTES_TO_IQOMAH_SHUBUH as "MinutesToIqomahShubuh", MINUTES_TO_IQOMAH_DZUHUR as "MinutesToIqomahDzuhur", MINUTES_TO_IQOMAH_ASHAR as "MinutesToIqomahAshar", ' +
     'MINUTES_TO_IQOMAH_MAGHRIB as "MinutesToIqomahMaghrib", MINUTES_TO_IQOMAH_ISYA as "MinutesToIqomahIsya", MINUTES_TO_ADZAN_PREP as "MinutesToAdzanPrep", LABEL_SHUBUH as "LabelShubuh", LABEL_SYURUQ as "LabelSyuruq", LABEL_DZUHUR as "LabelDzuhur", ' +
@@ -44,7 +44,7 @@ exports.findOne = async () => {
 
 exports.findByPk = async (id) => {
   try {
-    const sql = 'SELECT Id as id, ' +
+    const sql = 'SELECT Id as "Id", ' +
     'MINUTES_TO_ADZAN_SHUBUH as "MinutesToAdzanShubuh", MINUTES_TO_ADZAN_DZUHUR as "MinutesToAdzanDzuhur", MINUTES_TO_ADZAN_ASHAR as "MinutesToAdzanAshar", MINUTES_TO_ADZAN_MAGHRIB as "MinutesToAdzanMaghrib", MINUTES_TO_ADZAN_ISYA as "MinutesToAdzanIsya", ' +
     'MINUTES_TO_IQOMAH_SHUBUH as "MinutesToIqomahShubuh", MINUTES_TO_IQOMAH_DZUHUR as "MinutesToIqomahDzuhur", MINUTES_TO_IQOMAH_ASHAR as "MinutesToIqomahAshar", ' +
     'MINUTES_TO_IQOMAH_MAGHRIB as "MinutesToIqomahMaghrib", MINUTES_TO_IQOMAH_ISYA as "MinutesToIqomahIsya", MINUTES_TO_ADZAN_PREP as "MinutesToAdzanPrep", LABEL_SHUBUH as "LabelShubuh", LABEL_SYURUQ as "LabelSyuruq", LABEL_DZUHUR as "LabelDzuhur", ' +

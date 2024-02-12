@@ -4,7 +4,7 @@ const postgre = require("../db");
 exports.findAll = async () => {
   try {
     const { rows } = await postgre.query(
-      'SELECT Id as id, sequence as "Sequence", img_name as "ImgName", img_desc as "ImgDesc", img_source as "ImgSource" FROM masjid_slides ORDER BY id'
+      'SELECT Id as "Id", sequence as "Sequence", img_name as "ImgName", img_desc as "ImgDesc", img_source as "ImgSource" FROM masjid_slides ORDER BY id'
     );
     // console.log("rows", rows);
     return rows;
@@ -16,7 +16,7 @@ exports.findAll = async () => {
 exports.findByPk = async (id) => {
   try {
     const sql =
-      'SELECT Id as id, sequence as "Sequence", img_name as "ImgName", img_desc as "ImgDesc", img_source as "ImgSource" FROM masjid_slides where id = $1';
+      'SELECT Id as "Id", sequence as "Sequence", img_name as "ImgName", img_desc as "ImgDesc", img_source as "ImgSource" FROM masjid_slides where id = $1';
 
     const { rows } = await postgre.query(sql, [id]);
     // console.log("rows", rows)
@@ -29,7 +29,7 @@ exports.findByPk = async (id) => {
 exports.findByName = async (name) => {
   try {
     const sql =
-      'SELECT Id as id, sequence as "Sequence", img_name as "ImgName", img_desc as "ImgDesc", img_source as "ImgSource" FROM masjid_slides where img_name = $1';
+      'SELECT Id as "Id", sequence as "Sequence", img_name as "ImgName", img_desc as "ImgDesc", img_source as "ImgSource" FROM masjid_slides where img_name = $1';
 
     const { rows } = await postgre.query(sql, [name]);
     // console.log("rows", rows)
@@ -42,7 +42,7 @@ exports.findByName = async (name) => {
 exports.getSlides = async () => {
   try {
     const { rows } = await postgre.query(
-      'SELECT Id as id, sequence as "Sequence", img_name as "ImgName", img_desc as "ImgDesc", img_source as "ImgSource" FROM masjid_slides ORDER by id'
+      'SELECT Id as "Id", sequence as "Sequence", img_name as "ImgName", img_desc as "ImgDesc", img_source as "ImgSource" FROM masjid_slides ORDER by id'
     );
     // console.log("rows", rows);
     return rows;

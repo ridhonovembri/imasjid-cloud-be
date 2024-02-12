@@ -4,7 +4,7 @@ const postgre = require("../db");
 exports.findAll = async () => {
   try {
     const { rows } = await postgre.query(
-      'SELECT Id as id, marquee_text as "MarqueeText" FROM masjid_marquee ORDER by id'
+      'SELECT Id as "Id", marquee_text as "MarqueeText" FROM masjid_marquee ORDER by id'
     );
     // console.log("rows", rows);
     return rows;
@@ -16,7 +16,7 @@ exports.findAll = async () => {
 exports.findOne = async () => {
   try {
     const { rows } = await postgre.query(
-      'SELECT Id as id, marquee_text as "MarqueeText" FROM masjid_marquee LIMIT 1 '
+      'SELECT Id as "Id", marquee_text as "MarqueeText" FROM masjid_marquee LIMIT 1 '
     );
     // console.log("rows", rows)
     return rows[0];
@@ -28,7 +28,7 @@ exports.findOne = async () => {
 exports.findByPk = async (id) => {
   try {
     const sql =
-      'SELECT Id as id, marquee_text as "MarqueeText" FROM masjid_marquee where id = $1';
+      'SELECT Id as "Id", marquee_text as "MarqueeText" FROM masjid_marquee where id = $1';
 
     const { rows } = await postgre.query(sql, [id]);
     // console.log("rows", rows)
